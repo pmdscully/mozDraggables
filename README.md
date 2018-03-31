@@ -12,10 +12,10 @@ A tiny drag and drop vanilla JS library based on Mozilla's <a href="https://deve
 ### Demos:
 Here's the demo below or feel free to **clone the repo** and browse to the [demo.html](https://github.com/pmdscully/mozDraggables/blob/master/demo.html) page.
 
-<img src="https://github.com/pmdscully/mozDraggables/blob/master/gif/demo_static_dynamic.gif" width="700" height="700" />
+<img src="https://github.com/pmdscully/mozDraggables/blob/master/gif/demo_static_dynamic.gif" width="85%" height="85%" />
 
 
-### Added details:
+### Important details:
 * The listener events for dragging and dropping are bound to the document, so make sure that doesn't conflict with other bound drag and drop events. See the original MDN source for details.
 * Use display:inline; (or class .inline) on draggable elements such that their text/content is visible throughout the drag events.
 
