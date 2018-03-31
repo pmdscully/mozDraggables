@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Demo Page</title>
+</head>
+<body>
+
+<h1>
+    Drag and Drop Vanilla JS Library based on Mozilla Developer Network Example.
+</h1>
+<p>
+    Adapted from source: <a href="https://developer.mozilla.org/en-US/docs/Web/Events/drop">https://developer.mozilla.org/en-US/docs/Web/Events/drop</a>
+</p>
+<h3>What is it? and Why use it?</h3>
+<ul>
+    <li>    
+        It's a minimal vanilla (plain old) javascript library to handle drag and drop at a size of <strong>2.8kb (js)</strong> and <strong>461 bytes (css)</strong>.
+    </li>
+    <li>
+        <a href="https://jqueryui.com/download/">JQuery-UI</a> does this too, why not use that? The customised 'draggable &amp; droppable' minified stable 1.12.1 version is larger at <strong>37.1kb (js)</strong> and  <strong>15.1kb (css)</strong>.
+    </li>
+    <li>
+        Why not just use MDN's original source? This is packaged, tested and restructured for the following:
+        <ol>
+            <li>
+                copy/move option, 
+            </li>
+            <li>
+                post-drop draggable option and
+            </li> 
+            <li>
+                style is dependent on CSS classes.
+            </li>
+        </ol>
+    </li>
+</ul>
+
+<h3>Downloads:</h3>
+<ul>
+    <li><a href="src/mozDraggables.js">Download mozDraggables.js (2.8kb)</a></li>
+    <li><a href="src/mozDraggables.css">Download mozDraggables.css (461 bytes)</a></li>
+</ul>
+
+<link href="src/mozDraggables.css" rel="stylesheet" type="text/css" />
+<script src="src/mozDraggables.js"></script>
+
+<style>
+    /* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+
+
+<h2>
+    Demos of draggable and droppable elements:
+</h2>
+<!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Static-Code-Example')">Statically-Loaded</button>
+    <button class="tablinks" onclick="openCity(event, 'Dynamic-Code-Example')">Dynamically-Loaded</button>
+</div>
+
+<!-- Tab content -->
+<div id="Static-Code-Example" class="tabcontent">
+    <h2>
+        Statically-loaded:
+    </h2>
+    <span class="inline" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+        This element is draggable
+    </span>
+    <span class="inline" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+        This element is another draggable
+    </span>
+    <div class="dropzone"></div>
+    <div class="dropzone"></div>
+    <div class="dropzone"></div>
+    <div class="dropzone" style="height: 80px; width: 240px;">
+        Nested:
+        <div class="dropzone">
+            Inner:
+        </div>
+    </div>
+    
+    <h2>
+        Code:
+    </h2>
+    <pre style="background-color: #eee; border: 1px dashed #ddd; color: black; padding: 15px;">
+    <!-- 
+        <link href="src/mozDraggables.css" rel="stylesheet" type="text/css" />
+        <script src="src/mozDraggables.js"></script>
+        <span class="inline" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+            This element is draggable
+        </span>
+        <div class="dropzone"></div>
+        <div class="dropzone"></div> 
+    -->
+    </pre>
+</div>
+
+<div id="Dynamic-Code-Example" class="tabcontent">
+    <h2>
+        Dynamically-loaded:
+    </h2>
+    <br>
+    <div id="drop1"></div>
+    <br>
+    <br>
+    <button id="button-dropzone">Click to attach new dropzone</button>
+    <button id="button-draggable">Click to attach new draggable</button>
+    <script>
+        document.getElementById("button-dropzone").addEventListener("click", function(){
+        var el = document.createElement("div");
+        el.className = 'dropzone';
+        document.getElementById("drop1").appendChild(el);
+        });
+    
+        document.getElementById("button-draggable").addEventListener("click", function(){
+        var el = document.createElement("span");
+        el.classList.add('inline');
+        el.textContent = "Some new text that will be draggable.."
+        el.setAttribute("draggable","true");
+        el.setAttribute("ondragstart","event.dataTransfer.setData('text/plain',null)");
+        document.getElementById("drop1").parentNode.insertBefore(el, document.getElementById("drop1").nextSibling);
+        });
+    </script>
+    <br>
+    <br>
+    <h2>
+        Code:
+    </h2>
+    <pre style="background-color: #eee; border: 1px dashed #ddd; color: black; padding: 15px;">
+    <!-- 
+        <link href="src/mozDraggables.css" rel="stylesheet" type="text/css" />
+        <script src="src/mozDraggables.js"></script>    
+        <div id="drop1"></div>
+        <button id="button-dropzone">attach new dropzone</button>
+        <button id="button-draggable">attach new draggable</button>
+        <script>
+        document.getElementById("button-dropzone").addEventListener("click", function(){
+            var el = document.createElement("div");
+            el.className = 'dropzone';
+            document.getElementById("drop1").appendChild(el);
+        });
+    
+        document.getElementById("button-draggable").addEventListener("click", function(){
+            var el = document.createElement("span");
+            el.classList.add('inline');
+            el.textContent = "Some new text that will be draggable.."
+            el.setAttribute("draggable","true");
+            el.setAttribute("ondragstart","event.dataTransfer.setData('text/plain',null)");
+            document.getElementById("drop1").parentNode.insertBefore(el, document.getElementById("drop1").nextSibling);
+        }); 
+        </script>
+    -->
+    </pre>
+</div>
+
+
+
+
+
+
+
+<h3>What should I know before using it?</h3>
+<ul>
+    <li>
+        The listener events for dragging and dropping are bound to the document, so make sure that doesn't conflict with other bound drag and drop events. See the <a href="https://developer.mozilla.org/en-US/docs/Web/Events/drop">original source</a> for details.
+    </li>    
+    <li>
+        Use <code>display:inline;</code> (or class <code>.inline</code>) on draggable elements such that their text/content is visible throughout the drag events.
+    </li>
+    <li>
+        What options can I change?
+        <ul>
+            <li>
+                <code>
+                    Either "move" or "copy" elements. Defaults to "copy". (See global: var copy_or_move_flag).
+                </code>
+            </li>
+            <li>
+                <code>
+                    Allow dropped elements to be dragged again ("true" or "false"). Defaults to "false". (See global: var dropped_draggable_state).
+                </code>
+            </li>
+        </ul>
+    </li>
+</ul>
+<h3>Known issues:</h3>
+<ul>
+    <li>None at time of writing. Pull requests welcome.</li>
+</ul>
+
+<h3>Disclaimer:</h3>
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+<br>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</p>
+<script>
+//Properly display pre-code content:
+document.addEventListener("DOMContentLoaded", function() {
+    var els = document.getElementsByTagName("pre");
+    for(var i=0; i<els.length; i++){
+        var el = els[i];
+        el.innerHTML = el.innerHTML.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
+            return '&#'+i.charCodeAt(0)+';';
+        });
+    }
+});
+</script>
+<script>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    if(evt){
+        evt.currentTarget.className += " active";
+    }
+}
+openCity(event, 'Static-Code-Example');
+document.getElementsByClassName("tablinks")[0].className += " active";
+</script>
+</body>
+</html>

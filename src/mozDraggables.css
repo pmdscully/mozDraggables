@@ -1,0 +1,28 @@
+#draggable {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  background: white;
+}
+
+.dropzone {
+  width: 200px;
+  height: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px #ddd solid;
+  display: block;
+}
+
+.drag-start{
+    border: 1px dashed #CCC;
+}
+.drag-enter{
+    background: #eee;
+    border: 1px dashed #CCC;
+}
+
+.inline{ 
+  display: inline-block; /* Ensure dragged text is visible throughout dragging events. */
+  border: 1px #ddd dotted;
+}
