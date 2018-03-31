@@ -1,5 +1,7 @@
 # mozDraggables
-A tiny drag and drop vanilla JS library based on Mozilla's <a href="https://developer.mozilla.org/en-US/docs/Web/Events/drop">MDN example</a> at a size of <strong>2.8kb (js)</strong> and <strong>461 bytes (css)</strong>. Alternatives are <a href="https://jqueryui.com/download/">JQuery-UI's minified stable v1.12.1</a> at <strong>37.1kb (js)</strong> and  <strong>15.1kb (css)</strong>, or [Shopify's UX-enhanced Droppable example](https://shopify.github.io/draggable/examples/unique-dropzone.html) at <strong>414.7kb (concatenated-js)</strong>.
+A tiny drag and drop vanilla JS library based on Mozilla's <a href="https://developer.mozilla.org/en-US/docs/Web/Events/drop">MDN example</a> at a size of <strong>2.8kb (js)</strong> and <strong>461 bytes (css)</strong>. 
+
+Alternatives include [interactjs's](http://interactjs.io/) drag & drop at **85Kb (js)**, <a href="https://jqueryui.com/download/">JQuery-UI's minified stable v1.12.1</a> at <strong>37.1kb (js)</strong> and  <strong>15.1kb (css)</strong>, or [Shopify's UX-enhanced Droppable](https://shopify.github.io/draggable/examples/unique-dropzone.html) at <strong>414.7kb (concatenated-js)</strong>.
 
 
 ### Features of mozDraggables over MDN's original source:
