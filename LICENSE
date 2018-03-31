@@ -1,3 +1,6 @@
+Original source adapted from: https://developer.mozilla.org/en-US/docs/Web/Events/drop (March 2018)
+The distinct changes from the original are covered by the following:
+
 MIT License
 
 Copyright (c) 2018 Peter Scully
