@@ -12,7 +12,7 @@ A tiny drag and drop vanilla JS library based on Mozilla's <a href="https://deve
 ### Demos:
 Here's the demo below or feel free to **clone the repo** and browse to the [demo.html](https://github.com/pmdscully/mozDraggables/blob/master/demo.html) page.
 
-<img src="https://github.com/pmdscully/mozDraggables/blob/master/gif/demo_static_dynamic.gif" width="700" height="600" />
+<img src="https://github.com/pmdscully/mozDraggables/blob/master/gif/demo_static_dynamic.gif" width="700" height="700" />
 
 
 ### Added details:
