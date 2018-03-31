@@ -1,5 +1,5 @@
 # mozDraggables
-A tiny drag and drop vanilla JS library based on Mozilla's <a href="https://developer.mozilla.org/en-US/docs/Web/Events/drop">MDN example</a> at a size of <strong>2.8kb (js)</strong> and <strong>461 bytes (css)</strong>, compared to <a href="https://jqueryui.com/download/">JQuery-UI's minified stable v1.12.1</a> at <strong>37.1kb (js)</strong> and  <strong>15.1kb (css)</strong>.
+A tiny drag and drop vanilla JS library based on Mozilla's <a href="https://developer.mozilla.org/en-US/docs/Web/Events/drop">MDN example</a> at a size of <strong>2.8kb (js)</strong> and <strong>461 bytes (css)</strong>. Alternatives are <a href="https://jqueryui.com/download/">JQuery-UI's minified stable v1.12.1</a> at <strong>37.1kb (js)</strong> and  <strong>15.1kb (css)</strong>, or [Shopify's UX-enhanced Droppable example](https://shopify.github.io/draggable/examples/unique-dropzone.html) at <strong>414.7kb (concatenated-js)</strong>.
 
 
 ### Features of mozDraggables over MDN's original source:
@@ -18,9 +18,3 @@ Here's the demo below or feel free to **clone the repo** and browse to the [demo
 ### Important details:
 * The listener events for dragging and dropping are bound to the document, so make sure that doesn't conflict with other bound drag and drop events. See the original MDN source for details.
 * Use display:inline; (or class .inline) on draggable elements such that their text/content is visible throughout the drag events.
-
-### Issues:
-Feel free to fork and make pull requests for fixes and add bugs in the issue tracker.
-
-### Licensing:
-For the changes made from the original source, it's MIT license. Commercial and non-commercial use is fine without attribution. 
